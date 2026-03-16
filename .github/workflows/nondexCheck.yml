@@ -27,12 +27,10 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
       
-    - name: setupMaven
+    - name: setupDependencies
       shell: bash
-      run: mvn clean install -DskipTests -am
+      run: mvn clean install -DskipTests -pl oak-auth-ldap -am
       
     - name: runRegularTest
       run: mvn -pl oak-auth-ldap test -Dtest=org.apache.jackrabbit.oak.security.authentication.ldap.LdapIdentityProviderTest#testGetDeclaredGroupsByRef2
