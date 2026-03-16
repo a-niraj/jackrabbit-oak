@@ -33,8 +33,8 @@ jobs:
       run: mvn clean install -DskipTests -pl oak-auth-ldap -am
       
     - name: runRegularTest
-      run: mvn -pl oak-auth-ldap test -Dtest=org.apache.jackrabbit.oak.security.authentication.ldap.LdapIdentityProviderTest#testGetDeclaredGroupsByRef2
+      run: mvn -pl oak-auth-ldap test -Dtest=org.apache.jackrabbit.oak.security.authentication.ldap.impl.LdapIdentityProviderTest#testGetDeclaredGroupsByRef2
 
     - name: runNondexTest
-      run: mvn -pl oak-auth-ldap edu.illinois:nondex-maven-plugin:2.2.1:nondex -Dtest=org.apache.jackrabbit.oak.security.authentication.ldap.LdapIdentityProviderTest#testGetDeclaredGroupsByRef2
+      run: mvn -pl oak-auth-ldap edu.illinois:nondex-maven-plugin:2.2.1:nondex -Dtest=org.apache.jackrabbit.oak.security.authentication.ldap.impl.LdapIdentityProviderTest#testGetDeclaredGroupsByRef2
       
